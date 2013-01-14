@@ -13,14 +13,10 @@ patterns.each do | pattern, replacement |
   output.gsub!( pattern, replacement )
 end
 
-puts 'hi'
-
-p output
-
 output.gsub!( /^#+/ ) do | match |
   "h" + match.length.to_s + '.'
 end
 
 output.gsub!( '/^(h\d.*)#+$', '\1' )
 
-STDERR.puts output
+STDOUT.puts output
