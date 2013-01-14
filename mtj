@@ -7,7 +7,7 @@ patterns  = {
               /`([^`]+)`/               =>  '{{\1}}',
             }
 
-output     = STDIN.read
+output = STDIN.read
 
 patterns.each do | pattern, replacement |
   output.gsub!( pattern, replacement )
@@ -17,6 +17,7 @@ output.gsub!( /^#+/ ) do | match |
   "h" + match.length.to_s + '.'
 end
 
+## Doesn't work…
 output.gsub!( '/^(h\d.*)#+$', '\1' )
 
 STDOUT.puts output
